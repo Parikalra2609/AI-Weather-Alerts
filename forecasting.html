@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Weather Forecasting - AI Weather Alert System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>AI Weather Alerts</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="forecasting.html" class="nav-link active">AI Forecasting</a></li>
+                <li><a href="alerts.html" class="nav-link">AI Alerts</a></li>
+                <li><a href="future.html" class="nav-link">The Future</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>How AI Predicts Weather</h1>
+            <p>Advanced machine learning algorithms revolutionizing meteorological forecasting</p>
+        </div>
+    </header>
+
+    <section class="forecasting-hero">
+        <div class="container">
+            <div class="hero-content-split">
+                <div class="content-text">
+                    <h2>The Power of AI in Weather Prediction</h2>
+                    <p>Traditional weather forecasting relied on limited data points and human analysis. Today's AI-powered systems process vast amounts of information from satellites, weather stations, ocean buoys, and atmospheric sensors to create incredibly accurate predictions.</p>
+                </div>
+                <div class="content-image">
+                    <img src="images/forecast.jpg" alt="Satellite Weather Data" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="data-sources">
+        <div class="container">
+            <h2>AI Data Sources</h2>
+            <div class="data-grid">
+                <div class="data-card" onclick="animateCard(this)">
+                    <div class="data-icon"><img src="images/satellite.svg" alt=""></div>
+                    <h3>Satellite Data</h3>
+                    <p>Real-time imagery and atmospheric measurements from weather satellites orbiting Earth, providing comprehensive global coverage.</p>
+                </div>
+                <div class="data-card" onclick="animateCard(this)">
+                    <div class="data-icon"><img src="images/thermometer.svg" alt=""></div>
+                    <h3>Sensor Networks</h3>
+                    <p>Thousands of weather stations, buoys, and atmospheric sensors collecting temperature, humidity, pressure, and wind data.</p>
+                </div>
+                <div class="data-card" onclick="animateCard(this)">
+                    <div class="data-icon"><img src="images/growth.svg" alt=""></div>
+                    <h3>Historical Patterns</h3>
+                    <p>Decades of weather data analyzed to identify patterns, trends, and correlations that improve prediction accuracy.</p>
+                </div>
+                <div class="data-card" onclick="animateCard(this)">
+                    <div class="data-icon"><img src="images/boat.svg" alt=""></div>
+                    <h3>Ocean Conditions</h3>
+                    <p>Sea surface temperatures, currents, and marine atmospheric conditions that significantly influence weather patterns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ai-process">
+        <div class="container">
+            <h2>How AI Processes Weather Data</h2>
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h3>Data Collection</h3>
+                        <p>AI systems continuously gather data from multiple sources including satellites, weather stations, and sensors across Canada.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h3>Pattern Recognition</h3>
+                        <p>Machine learning algorithms identify complex patterns in atmospheric conditions that human forecasters might miss.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h3>Prediction Modeling</h3>
+                        <p>Neural networks create sophisticated models predicting weather conditions hours to days in advance with high accuracy.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h3>Continuous Learning</h3>
+                        <p>AI systems continuously improve by comparing predictions with actual outcomes, refining their accuracy over time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="canada-focus">
+        <div class="container">
+            <div class="canada-content">
+                <div class="canada-text">
+                    <h2>AI Weather Forecasting in Canada</h2>
+                    <p>Environment and Climate Change Canada has implemented advanced AI systems to handle the country's diverse and extreme weather conditions.</p>
+                    <ul class="feature-list">
+                        <li>Improved prediction of severe storms and blizzards</li>
+                        <li>Early detection of wildfire weather conditions</li>
+                        <li>Enhanced flood forecasting and warning systems</li>
+                        <li>Better prediction of extreme temperature events</li>
+                        <li>More accurate seasonal climate outlooks</li>
+                    </ul>
+                </div>
+                <div class="canada-image">
+                    <img src="images/canadaforecast.jpg" alt="Canadian Weather Monitoring" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="interactive-demo">
+        <div class="container">
+            <h2>AI Prediction Accuracy</h2>
+            <div class="demo-container">
+                <div class="accuracy-meter">
+                    <div class="meter-label">Current AI Accuracy</div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" style="width: 0%" id="accuracyFill">
+                            <span class="meter-text" id="accuracyText">0%</span>
+                        </div>
+                    </div>
+                    <button class="demo-button" onclick="animateAccuracy()">Show AI Accuracy</button>
+                </div>
+                <div class="demo-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">24-hour Accuracy</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">87%</div>
+                        <div class="stat-label">7-day Accuracy</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">72%</div>
+                        <div class="stat-label">14-day Accuracy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 AI Weather Alert System</p>
+            <p>Researched and designed by Pranchal</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
