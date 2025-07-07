@@ -134,3 +134,114 @@ function triggerDemoAlert() {
   screen.classList.add("flash");
   setTimeout(() => screen.classList.remove("flash"), 800);
 }
+// Simulate an AI emergency alert in the demo phone
+function triggerDemoAlert() {
+  const alerts = [
+    {
+      title: "Tornado Warning",
+      message: "Take cover immediately. Stay away from windows and move to the lowest floor.",
+    },
+    {
+      title: "Wildfire Evacuation",
+      message: "Evacuate now. Follow local emergency instructions and avoid smoke-affected areas.",
+    },
+    {
+      title: "Flash Flood Alert",
+      message: "Move to higher ground. Do not attempt to drive through flooded areas.",
+    },
+    {
+      title: "Extreme Heat Advisory",
+      message: "Stay hydrated and indoors. Avoid strenuous outdoor activity between 11 AM and 5 PM.",
+    },
+  ];
+
+  // Pick a random alert
+  const randomIndex = Math.floor(Math.random() * alerts.length);
+  const selected = alerts[randomIndex];
+
+  // Update alert content
+  const alertContent = document.getElementById("alertContent");
+  alertContent.innerHTML = `
+    <div class="alert-title">${selected.title}</div>
+    <div class="alert-message">${selected.message}</div>
+  `;
+
+  // Add current time
+  const now = new Date();
+  const formattedTime = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  document.getElementById("alertTime").textContent = formattedTime;
+
+  // Optional: flash animation
+  const screen = document.getElementById("phoneScreen");
+  screen.classList.add("flash");
+  setTimeout(() => screen.classList.remove("flash"), 800);
+}
+
+// Video functionality
+function playVideo() {
+  const video = document.getElementById('featuredVideo');
+  const overlay = document.getElementById('videoOverlay');
+  
+  overlay.style.display = 'none';
+  video.play();
+}
+
+function changeVideo(type) {
+  const video = document.getElementById('featuredVideo');
+  const overlay = document.getElementById('videoOverlay');
+  
+  // Video sources for different types
+  const videoSources = {
+    demo: {
+      mp4: 'https://youtu.be/C8I-1dFxJTI',
+      webm: 'https://youtu.be/C8I-1dFxJTI',
+      poster: 'images/video-poster-demo.jpg'
+    },
+    forecast: {
+      mp4: 'https://youtu.be/C8I-1dFxJTI',
+      webm: 'https://youtu.be/C8I-1dFxJTI',
+      poster: 'images/video-poster-forecast.jpg'
+    },
+    alerts: {
+      mp4: 'https://youtu.be/C8I-1dFxJTI',
+      webm: 'https://youtu.be/C8I-1dFxJTI',
+      poster: 'images/video-poster-alerts.jpg'
+    }
+  };
+  
+  if (videoSources[type]) {
+    video.pause();
+    video.innerHTML = `
+      <source src="${videoSources[type].mp4}" type="video/mp4">
+      <source src="${videoSources[type].webm}" type="video/webm">
+      Your browser does not support the video tag.
+    `;
+    video.poster = videoSources[type].poster;
+    video.load();
+    overlay.style.display = 'flex';
+    
+    // Update active button
+    document.querySelectorAll('.video-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+}
+
+// Video event listeners
+document.addEventListener('DOMContentLoaded', function() {
+  const video = document.getElementById('featuredVideo');
+  const overlay = document.getElementById('videoOverlay');
+  
+  if (video && overlay) {
+    video.addEventListener('play', function() {
+      overlay.style.display = 'none';
+    });
+    
+    video.addEventListener('pause', function() {
+      overlay.style.display = 'flex';
+    });
+    
+    video.addEventListener('ended', function() {
+      overlay.style.display = 'flex';
+    });
+  }
+});
